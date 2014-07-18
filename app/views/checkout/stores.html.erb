@@ -1,0 +1,40 @@
+<div class="text-center">
+	<script type="text/javascript">
+	  $(document).ready(function(){
+	    $('[data-behaviour~=datepicker]').datepicker();
+	  })
+
+	</script>
+
+
+	<div class="page-header">
+		<h1>
+			<small>Store Addresses</small>
+		</h1>
+	</div>
+
+	
+	<ul class="list-group">
+		<li class="list-group-item"><small>Some Random Place on Mars</small></li>
+		<li class="list-group-item"><small>Some Random Place on Moon</small></li>
+		<li class="list-group-item"><small>Some Random Place on Venus</small></li>
+		<li class="list-group-item"><small>Some Random Place on Sun</small></li>
+
+	</ul>
+
+	<div class="date">
+		Please Select A Date For Pickup
+	</div>
+	
+
+	
+	
+	<%= form_tag({controller: "checkout", action:"final_store"}) %>
+		<input name="datepick" type="text" data-provide="datepicker" /> 
+
+		<%= submit_tag "Confirm", class:"btn btn-large btn-warning"%>
+
+	
+		
+	
+</div>

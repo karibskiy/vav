@@ -1,0 +1,15 @@
+<%= bootstrap_form_tag url: final_shipping_path  do |f| %>
+	<%= f.text_field :building_no , label:"Building Number"%>
+
+	<%= f.text_field :street_name , label:"Street Name"%>
+
+	<%= f.text_field :locality_name , label:"Locality Name"%>
+
+	<%= f.text_field :city , label:"City"%>
+
+	<%= f.text_field :pincode , label:"Pincode"%>
+
+	<%= f.text_field :mobile , label:"Mobile"%>
+
+	<%= f.submit "Confirm Order", class: "btn btn-warning" %>
+<% end %>

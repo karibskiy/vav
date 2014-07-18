@@ -1,0 +1,21 @@
+<div class="wrap">
+
+	<div class="signup">
+		<%= bootstrap_form_for(@user) do |f| %>
+			
+			<%= f.text_field :name%>
+
+			
+			<%= f.text_field :email%>
+
+			
+			<%= f.password_field :password%>
+
+			
+			<%= f.password_field :password_confirmation ,label:"Confirm Password" %>
+			<div >
+				<%= f.submit "Create Account", class: "btn btn-large btn-primary" %>
+			</div>
+		<% end %>
+	</div>
+</div>

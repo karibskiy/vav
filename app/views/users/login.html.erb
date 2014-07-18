@@ -1,0 +1,23 @@
+<div class="wrap">
+
+	<div class="signin">
+		
+	</div>
+
+	<div class="signup">
+		<%= bootstrap_form_for(@user) do |f| %>
+			
+			<%= f.text_field :name%>
+
+			
+			<%= f.text_field :email%>
+
+			
+			<%= f.tpassword_field :password%>
+
+			
+			<%= f.tpassword_field :password_confirm%>
+			<%= f.submit "Create Account", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,84 @@
+
+<div id="wrap">
+	<div class="heading">
+		<h1><span class="label label-default">All Products</span></h1>
+	</div>
+	<div class="grid text-center">
+		<% l = @products.length-1 %>
+
+		<% while l > 1 %>
+			<div class="row">
+				
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<%=image_tag("/images/pic.jpg",size: "350x100", alt: "ALT MESSAGE!!")%>
+								<b><%= @products[l].name %></b>
+								<%= button_to 'Add to Cart', {:controller => "checkout", :action => "new",  :product_id => @products[l].id, :user_id=> current_user} , :method=>:post , :class=>"btn btn-large btn-default" %>
+								
+							</div>
+						</div>
+					
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<%=image_tag("/images/pic.jpg", size: "350x100", alt: "ALT MESSAGE!!")%>
+								<b><%= @products[l-1].name %></b>
+								<%= button_to 'Add to Cart', {:controller => "checkout", :action => "new",  :product_id => @products[l-1].id, :user_id=> current_user} , :method=>:post , :class=>"btn btn-large btn-default" %>
+								
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="thumbnail" >
+								<%=image_tag("/images/pic.jpg", size: "350x100", alt: "ALT MESSAGE!!")%>
+								<b><%= @products[l-2].name %></b>
+								<%= button_to 'Add to Cart', {:controller => "checkout", :action => "new",  :product_id => @products[l-2].id, :user_id=> current_user} , :method=>:post , :class=>"btn btn-large btn-default" %>
+								
+							</div>
+						</div>
+					</li>
+				</ul>
+				<%l=l-3 %>
+
+			</div>
+		<%end%>
+
+		<% if l == 1 %>
+			<div class="row">
+				
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<%=image_tag("/images/pic.jpg",size: "350x100", alt: "ALT MESSAGE!!")%>
+								<b><%= @products[l].name %></b>
+								<%= button_to 'Add to Cart', {:controller => "checkout", :action => "new",  :product_id => @products[l].id, :user_id=> current_user} , :method=>:post , :class=>"btn btn-large btn-default" %>
+								
+							</div>
+						</div>
+					
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<%=image_tag("/images/pic.jpg", size: "350x100", alt: "ALT MESSAGE!!")%>
+								<b><%= @products[l].name %></b>
+								<%= button_to 'Add to Cart', {:controller => "checkout", :action => "new",  :product_id => @products[l-1].id, :user_id=> current_user} , :method=>:post , :class=>"btn btn-large btn-default" %>
+								
+							</div>
+						</div>
+			</div>
+		<% end %>
+
+
+		<% if l == 0 %>
+			<div class="row">
+				
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<%=image_tag("/images/pic.jpg",size: "350x100", alt: "ALT MESSAGE!!")%>
+								<b><%= @products[l].name %></b>
+								<%= button_to 'Add to Cart', {:controller => "checkout", :action => "new",  :product_id => @products[l].id, :user_id=> current_user} , :method=>:post , :class=>"btn btn-large btn-default" %>
+								
+							</div>
+						</div>
+
+			</div>
+
+		<% end %>
+	</div>
+</div>

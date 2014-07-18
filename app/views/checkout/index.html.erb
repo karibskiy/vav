@@ -1,0 +1,32 @@
+<div><h1><span class="label label-default">CHECKOUT PAGE</span></h1></div>
+<div class="checkout-list">
+	<div class="text-center">
+	<ul class="list-group">
+		
+		<% @items.each do |i| %>
+  			<li class="list-group-item">
+  				<ul class="list-inline">
+
+	  				<li><span class="label label-default">Name - <%=i.instance_variable_get(:@product_name)%></span> </li>
+	  				<li><span class="label label-default">Price - <%=i.instance_variable_get(:@product_price)%></span></li>
+	  				<li><span class="label label-default">Time of Creation - <%=i.created_at%></span> </li>
+
+	  				<li><span><%= button_to 'Delete', {:controller => "checkout", :action => "destroyfinal",  :id => i.id, :user_id=> current_user} , :method=>:delete , :class=>"btn btn-xs btn-danger" %></span></li>
+
+  				</ul>
+  			</li>
+	  	<% end %>
+	</ul>
+		<div>
+		<h2><span class="label label-primary">Total Sum = <%= @sum %></span></h2>
+	</div>
+		<div class="ship-button">
+			<a href="<%=store_address_url%>">
+				<button type="button" class="btn btn-default">Collect From Store </button>
+			</a>
+			<a href="<%=shipping_url%>">
+				<button type="button" class="btn btn-default" >Shipping</button>
+			</a>
+		</div>
+	</div>
+</div>

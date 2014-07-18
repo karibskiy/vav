@@ -1,0 +1,23 @@
+<div class="text-center">
+
+	<h1><span class="label label-default">My Orders</span></h1>
+
+	<div class="orders">
+		<% if @orders %>
+			<ul class="list-group"></ul>
+				<% @orders.each do |i| %>
+				<li class="list-group-item">
+					<%= i.instance_variable_get(:@product_name) %>
+					<%= i.created_at %>
+					<% if i.pickup == true %>
+						Pick Up Scheduled for <%= i.date %>
+					<% else %>
+						Dispatched for Shipping
+					<% end %>
+				</li>
+				<%end %>
+			</ul>
+		<% end %>
+
+	</div>
+</div>

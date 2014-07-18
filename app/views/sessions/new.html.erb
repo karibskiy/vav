@@ -1,0 +1,11 @@
+<%= bootstrap_form_for(:session, url: sessions_path) do |f| %>
+
+      
+      <%= f.text_field :email %>
+
+      
+      <%= f.password_field :password %>
+      <div class="submit-btn">
+      	<%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+      </div>
+<% end %>
