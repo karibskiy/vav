@@ -1,17 +1,8 @@
 class UsersController < ApplicationController
   def profile
-  end
-  def orders
-    @orders = Order.find_by_uid(current_user.id)
-
+    @title = "My Profile"
   end
 
-  def logout
-  end
-
-  def login
-  	
-  end
 
   def create
 
@@ -32,12 +23,16 @@ class UsersController < ApplicationController
   	end
 
   end
+
+
   def new
   	@user = User.new
+    @title = "Sign Up"
   end
 
 
   def orders
+    @title = "My Orders"
     @orders = Order.where(:uid=>current_user.id)
 
     @orders.each do |i|
@@ -47,9 +42,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def profile
-    
-  end
 
 
   private
