@@ -1,7 +1,7 @@
 class CheckoutController < ApplicationController
   def new
   	if !signed_in?
-  		flash[:danger] = "Please Login to Continue"
+  		flash[:danger] = "Зарегистрируйтесь чтобы продолжать"
   		redirect_to signin_path
   	else
 	  	uid = params[:user_id]
@@ -23,10 +23,10 @@ class CheckoutController < ApplicationController
   	item = Cart.find(params[:id])
 
   	if Cart.delete(item)
-  		flash[:success] = "Item Deleted Successfully From Cart"
+  		flash[:success] = "Успешно удалено из корзины"
   		redirect_to mycart_path
   	else
-  		flash[:danger] = "Error Deleting Item From Cart"
+  		flash[:danger] = "Ошибка удаления"
   	end
   end
 
@@ -34,10 +34,10 @@ class CheckoutController < ApplicationController
   	item = Cart.find(params[:id])
 
   	if Cart.delete(item)
-  		flash[:success] = "Item Deleted Successfully"
+  		flash[:success] = "Успешно удалено"
   		redirect_to checkout_path
   	else
-  		flash[:danger] = "Error Deleting Item"
+  		flash[:danger] = "Ошибка удаленя"
   	end
   end
 
@@ -68,7 +68,7 @@ class CheckoutController < ApplicationController
 
     date = params[:datepick]
     if date == ""
-      flash[:danger] = "Please enter a date"
+      flash[:danger] = "Введите дату"
       redirect_to store_address_path
       return
     end

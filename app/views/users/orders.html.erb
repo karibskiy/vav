@@ -3,7 +3,14 @@
 	<h1><span class="label label-default">Мои заказы</span></h1>
 
 	<div class="orders">
-		<% if @orders %>
+		<% if @orders.length == 0 %>
+   <div class="no-item">
+		<div class="text-center">
+			<h2><small>У Вас нет заказов :(</small></h2>
+		</div>
+	</div>	
+<% else %> 
+    
 			<ul class="list-group"></ul>
 				<% @orders.each do |i| %>
 				<li class="list-group-item">

@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   
   get 'product/buy/:id' => 'product#buy'
 
+  match '/admin',  to: 'admin#index',           via: 'get'
+  match '/admintovar',  to: 'admin#tovar',      via: 'get'
+  match '/adminzakaz',  to: 'admin#zakaz',      via: 'get'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
