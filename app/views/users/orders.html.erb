@@ -1,6 +1,6 @@
 <div class="text-center">
 
-	<h1><span class="label label-default">My Orders</span></h1>
+	<h1><span class="label label-default">Мои заказы</span></h1>
 
 	<div class="orders">
 		<% if @orders %>
@@ -10,9 +10,9 @@
 					<small><%= i.instance_variable_get(:@product_name) %> | 
 					<%= i.created_at %> | 
 					<% if i.pickup == true %>
-						Pick Up Scheduled for <%= i.date %>
+						Самовывоз из магазина <%= i.date %>
 					<% else %>
-						Dispatched for Shipping
+						Доставка по адресу 
 					<% end %>
 				</small>
 				</li>

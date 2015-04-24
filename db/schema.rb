@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20140717093115) do
 
   create_table "products", force: true do |t|
     t.string   "name"
-    t.decimal  "price",      precision: 10, scale: 0
+    t.decimal  "price"
     t.integer  "quantity"
     t.text     "desc"
     t.string   "pic"
@@ -63,6 +63,6 @@ ActiveRecord::Schema.define(version: 20140717093115) do
     t.string   "remember_token"
   end
 
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
 
 end

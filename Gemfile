@@ -8,7 +8,7 @@ gem 'rails', '4.1.4'
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-sass', '>=3.0.0.0'
 gem 'bootstrap_form'
-gem 'mysql2'
+gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

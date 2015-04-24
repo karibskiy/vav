@@ -1,7 +1,7 @@
 
 <div id="wrap">
 	<div class="heading">
-		<h1><span class="label label-default">All Products</span></h1>
+		<h1><span class="label label-default">Картриджи в наличии</span></h1>
 	</div>
 	<div class="grid text-center">
 		<% l = @products.length-1 %>
@@ -13,7 +13,9 @@
 							<div class="thumbnail">
 								<%=image_tag("/images/pic.jpg",size: "350x100", alt: "ALT MESSAGE!!")%>
 								<b><%= @products[l].name %></b>
-								<%= button_to 'Add to Cart', {:controller => "checkout", :action => "new",  :product_id => @products[l].id, :user_id=> current_user} , :method=>:post , :class=>"btn btn-large btn-default" %>
+                <br>
+                <b><%= @products[l].price %> руб.</b>
+								<%= button_to 'В корзину', {:controller => "checkout", :action => "new",  :product_id => @products[l].id, :user_id=> current_user} , :method=>:post , :class=>"btn btn-large btn-default" %>
 								
 							</div>
 						</div>
@@ -22,7 +24,9 @@
 							<div class="thumbnail">
 								<%=image_tag("/images/pic.jpg", size: "350x100", alt: "ALT MESSAGE!!")%>
 								<b><%= @products[l-1].name %></b>
-								<%= button_to 'Add to Cart', {:controller => "checkout", :action => "new",  :product_id => @products[l-1].id, :user_id=> current_user} , :method=>:post , :class=>"btn btn-large btn-default" %>
+                <br>
+                <b><%= @products[l-1].price %> руб.</b>
+								<%= button_to 'В корзину', {:controller => "checkout", :action => "new",  :product_id => @products[l-1].id, :user_id=> current_user} , :method=>:post , :class=>"btn btn-large btn-default" %>
 								
 							</div>
 						</div>
@@ -30,7 +34,9 @@
 							<div class="thumbnail" >
 								<%=image_tag("/images/pic.jpg", size: "350x100", alt: "ALT MESSAGE!!")%>
 								<b><%= @products[l-2].name %></b>
-								<%= button_to 'Add to Cart', {:controller => "checkout", :action => "new",  :product_id => @products[l-2].id, :user_id=> current_user} , :method=>:post , :class=>"btn btn-large btn-default" %>
+                <br>
+                <b><%= @products[l-2].price %> руб.</b>
+								<%= button_to 'В корзину', {:controller => "checkout", :action => "new",  :product_id => @products[l-2].id, :user_id=> current_user} , :method=>:post , :class=>"btn btn-large btn-default" %>
 								
 							</div>
 						</div>
@@ -48,7 +54,9 @@
 							<div class="thumbnail">
 								<%=image_tag("/images/pic.jpg",size: "350x100", alt: "ALT MESSAGE!!")%>
 								<b><%= @products[l].name %></b>
-								<%= button_to 'Add to Cart', {:controller => "checkout", :action => "new",  :product_id => @products[l].id, :user_id=> current_user} , :method=>:post , :class=>"btn btn-large btn-default" %>
+                <br>
+                <b><%= @products[l].price %> руб.</b>
+								<%= button_to 'В корзину', {:controller => "checkout", :action => "new",  :product_id => @products[l].id, :user_id=> current_user} , :method=>:post , :class=>"btn btn-large btn-default" %>
 								
 							</div>
 						</div>
@@ -57,6 +65,8 @@
 							<div class="thumbnail">
 								<%=image_tag("/images/pic.jpg", size: "350x100", alt: "ALT MESSAGE!!")%>
 								<b><%= @products[l].name %></b>
+                <br>
+                <b><%= @products[l].price %> руб.</b>
 								<%= button_to 'Add to Cart', {:controller => "checkout", :action => "new",  :product_id => @products[l-1].id, :user_id=> current_user} , :method=>:post , :class=>"btn btn-large btn-default" %>
 								
 							</div>
@@ -72,6 +82,8 @@
 							<div class="thumbnail">
 								<%=image_tag("/images/pic.jpg",size: "350x100", alt: "ALT MESSAGE!!")%>
 								<b><%= @products[l].name %></b>
+                <br>
+                <b><%= @products[l].price %> руб.</b>
 								<%= button_to 'Add to Cart', {:controller => "checkout", :action => "new",  :product_id => @products[l].id, :user_id=> current_user} , :method=>:post , :class=>"btn btn-large btn-default" %>
 								
 							</div>

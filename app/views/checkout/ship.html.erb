@@ -1,15 +1,15 @@
 <%= bootstrap_form_tag url: final_shipping_path  do |f| %>
-	<%= f.text_field :building_no , label:"Building Number"%>
+	<%= f.text_field :building_no , label:"Номер дома"%>
 
-	<%= f.text_field :street_name , label:"Street Name"%>
+	<%= f.text_field :street_name , label:"Улица"%>
 
-	<%= f.text_field :locality_name , label:"Locality Name"%>
+	<%= f.text_field :locality_name , label:"Ваше имя"%>
 
-	<%= f.text_field :city , label:"City"%>
+	<%= f.text_field :city , label:"Город"%>
 
-	<%= f.text_field :pincode , label:"Pincode"%>
+	<%= f.text_field :pincode , label:"Пинкод на парадном"%>
 
-	<%= f.text_field :mobile , label:"Mobile"%>
+	<%= f.text_field :mobile , label:"Телефон"%>
 
-	<%= f.submit "Confirm Order", class: "btn btn-warning" %>
+	<%= f.submit "Подтвердить", class: "btn btn-warning" %>
 <% end %>

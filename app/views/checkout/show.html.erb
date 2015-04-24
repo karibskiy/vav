@@ -1,8 +1,8 @@
-<div><h1><span class="label label-default">My Cart</span></h1></div>
+<div><h1><span class="label label-default">Моя корзина</span></h1></div>
 <% if @all_items.length == 0 %>
 	<div class="no-item">
 		<div class="text-center">
-			<h2><small>No Items in Cart :(</small></h2>
+			<h2><small>Нет товаров в корзине :(</small></h2>
 		</div>
 	</div>	
 <% else %>
@@ -15,7 +15,7 @@
 
 		  				<li><span class="label label-success"><%=i.instance_variable_get(:@pname)%></span> </li>
 		  				<li><span class="label label-primary"><%=i.created_at%></span> </li>
-		  				<li><span><%= button_to 'Delete', {:controller => "checkout", :action => "destroy",  :id => i.id, :user_id=> current_user} , :method=>:delete , :class=>"btn btn-sm btn-danger" %></span></li>
+		  				<li><span><%= button_to 'Удалить', {:controller => "checkout", :action => "destroy",  :id => i.id, :user_id=> current_user} , :method=>:delete , :class=>"btn btn-sm btn-danger" %></span></li>
 	  				</ul>
 	  			</li>
 		  	<% end %>
